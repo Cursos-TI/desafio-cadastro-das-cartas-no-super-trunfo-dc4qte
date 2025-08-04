@@ -119,7 +119,7 @@ int main(){
         if (ponto_turistico1 > ponto_turistico2){
             printf("Carta 1 (%s)- %d venceu\n",pais1, ponto_turistico1);
         }
-        else if (populacao1< populacao2){
+        else if (ponto_turistico1 < ponto_turistico2){
             printf("Carta 2 (%s) - %d venceu\n",pais2, ponto_turistico2);
         }
         else{
