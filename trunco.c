@@ -15,7 +15,7 @@ int main(){
     pais1[strcspn(pais1, "\n")] = '\0';
     printf("CARTA 1: Digite o número de habitantes: ");
     scanf("%lu", &populacao1);
-    printf("CARTA 1: Digite a área do país em m2: ");
+    printf("CARTA 1: Digite a área do país em km²: ");
     scanf("%f", &area1);
     printf("CARTA 1: Digite o PIB do país em bilhões: ");
     scanf("%f", &pib1);
@@ -31,7 +31,7 @@ int main(){
     pais2[strcspn(pais2, "\n")] = '\0';
     printf("CARTA 2: Digite o número de habitantes: ");
     scanf("%lu", &populacao2);
-    printf("CARTA 2: Digite a área do país em m2: ");
+    printf("CARTA 2: Digite a área do país em km²: ");
     scanf("%f", &area2);
     printf("CARTA 2: Digite o PIB do país em bilhões: ");
     scanf("%f", &pib2);
@@ -114,43 +114,42 @@ int main(){
     }
     else
     {
-    switch (escolha2)
-    {
-    case 1:
-        if (populacao1 != populacao2)
+        switch (escolha2)
+        {
+        case 1:
+            if (populacao1 != populacao2)
+                {
+                (populacao1 > populacao2) ? pontuacao1 ++ : pontuacao2 ++;
+                }
+            break;
+
+        case 2:
+            if (area1 != area2)
             {
-            (populacao1 > populacao2) ? pontuacao1 ++ : pontuacao2 ++;
+            (area1 > area2) ? pontuacao1 ++ : pontuacao2 ++;
             }
         break;
 
-    case 2:
-        if (area1 != area2)
-        {
-        (area1 > area2) ? pontuacao1 ++ : pontuacao2 ++;
-        }
-    break;
+        case 3:
+            if (pib1 != pib2)
+            {
+           (pib1 > pib2) ? pontuacao1 ++ : pontuacao2 ++;
+            }
+        break;
 
-    case 3:
-        if (pib1 != pib2)
-        {
-       (pib1 > pib2) ? pontuacao1 ++ : pontuacao2 ++;
-        }
-    break;
+        case 4:
+            if (ponto_turistico1 != ponto_turistico2)
+            {
+            (ponto_turistico1 > ponto_turistico2) ? pontuacao1++ : pontuacao2++;
+            }
+        break;
 
-    case 4:
-        if (ponto_turistico1 != ponto_turistico2)
-        {
-        (ponto_turistico1 > ponto_turistico2) ? pontuacao1++ : pontuacao2++;
-        }
-    break;
-
-    case 5:
-        if (densidade_populacional_cidade_1 != densidade_populacional_cidade_2)
-        {
-        (densidade_populacional_cidade_1 > densidade_populacional_cidade_2) ? pontuacao2++ : pontuacao1++;
-        }
-    break;
-
+        case 5:
+            if (densidade_populacional_cidade_1 != densidade_populacional_cidade_2)
+            {
+            (densidade_populacional_cidade_1 > densidade_populacional_cidade_2) ? pontuacao2++ : pontuacao1++;
+            }
+        break;
 
     default:
           printf("Opção inválida!");
@@ -206,7 +205,7 @@ int main(){
         break;
 
     default:
-        printf("Opção inválida!\n");
+        printf("Opção inválida para a escolha 1!\n");
     }
 
     // MOSTRAR A 2A COMPARACAO
@@ -257,7 +256,7 @@ int main(){
         break;
 
     default:
-        printf("Opção inválida!\n");
+        printf("Opção inválida para a escolha 2!\n");
     }
 
     //MSG FINAL MOSTRANDO O GANHADOR
